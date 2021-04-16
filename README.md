@@ -1,5 +1,5 @@
-# FMERepoTran
-Development utility tool to transfer Repositories between FME Servers.
+# FMEFMWFinder
+Development utility tool to find Repositories that have given properties on FME Servers.
 
 app.jon
   const definetion for the application.
