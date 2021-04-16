@@ -1,0 +1,24 @@
+{
+  "fme_server": "gienah.dmz",
+  "output_dir": "output",
+  "repo_filter": {
+    "BCGW_SCHEDULED": "1"
+  },
+  "fmw_filter": {
+    "on": false,
+    "items": [
+      "acdf_service_codes_staging_csv_bcgw.fmw"
+    ]
+  },
+  "find_target": [
+    {
+      "name": "*",
+      "value": "DEST_SCHEMA"
+    },
+    {
+      "name": "*",
+      "value": "DLV",
+      "match": "equal"
+    }
+  ]
+}
