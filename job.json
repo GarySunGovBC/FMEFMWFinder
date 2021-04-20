@@ -10,15 +10,31 @@
       "acdf_service_codes_staging_csv_bcgw.fmw"
     ]
   },
-  "find_target": [
+  "match": [
     {
-      "name": "*",
-      "value": "DEST_SCHEMA"
+      "found": false,
+      "values": [
+        {
+          "name": "DEST_SCHEMA",
+          "criteria": "equal"
+        }
+      ],
+      "props": []
     },
     {
-      "name": "*",
-      "value": "DLV",
-      "match": "equal"
+      "found": false,
+      "values": [
+        {
+          "name": "DEST_DB_ENV_KEY",
+          "criteria": "equal"
+        },
+        {
+          "defaultValue": "DLV",
+          "criteria": "equal"
+        }
+      ],
+      "props": []
     }
   ]
 }
+

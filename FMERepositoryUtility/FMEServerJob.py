@@ -1,7 +1,7 @@
 from datetime import datetime
 from FMEAPI.ApiException import APIException
 from FMERepositoryUtility.FMEServerAPIJob import FMEServerAPIJob
-from FMERepositoryUtility.ObjectFinder import ObjectFinder
+from FMERepositoryUtility.PropFind import PropFind
 
 
 class FMEServerJob:
@@ -12,7 +12,8 @@ class FMEServerJob:
         self.log = log
         self.result = result
         self.api = FMEServerAPIJob(job_config, secrect_config, self.job_config["output_dir"], log)
-        self.object_finder = ObjectFinder(self.job_config["find_target"])
+        self.prop_find = PropFind(self.job_config["match"])
+        self.fmw_found_list=list()
 
     def do_repo_job(self, repo):
         pass
