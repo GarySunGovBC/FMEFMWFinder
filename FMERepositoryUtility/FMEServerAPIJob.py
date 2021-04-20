@@ -73,3 +73,10 @@ class FMEServerAPIJob:
         get_prop_func = lambda repo_name, fmw_name, resource_name: self.job.get_fmw_resources_info(repo_name, fmw_name,
                                                                                                    resource_name)
         return self.prop_exists([repo_name, fmw_name, resource_name], get_prop_func)
+
+    def list_fmw_parameters(self, repo_name, fmw_name):
+        return self.job.list_fmw_parameters(repo_name, fmw_name)
+
+    def get_fmw_parameters_pub_info(self, repo_name, fmw_name, pub_name):
+        """Retrieves a published parameter of a workspace."""
+        return self.job.get_fmw_parameters_pub_info(repo_name, fmw_name, pub_name)
