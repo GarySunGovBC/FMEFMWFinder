@@ -1,5 +1,5 @@
 import json
-
+import os
 from FMERepositoryUtility.FMERepositoryFind import FMERepositoryFind
 from FileLogger.Logger import AppLogger
 
@@ -14,8 +14,8 @@ with open(SECRET_CONFIG) as secrect_config_json:
     secrect_config = json.load(secrect_config_json)
 with open(JOB_CONFIG) as job_config_json:
     job_config = json.load(job_config_json)
-log = AppLogger("output\\log.txt", True)
-result = AppLogger("output\\result.txt", True)
+log = AppLogger(os.path.join(app_config["log_dir"], "log.txt"), True)
+result = AppLogger(os.path.join(app_config["log_dir"], "result.txt"), True)
 
 
 def create_job():

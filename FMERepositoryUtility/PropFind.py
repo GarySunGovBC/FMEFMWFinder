@@ -5,14 +5,20 @@ class PropFind:
 
     def __init__(self, matches):
         self.matches = matches
+        self.search = None
 
     def clear(self):
+        search = list()
         for match in self.matches:
-            match["found"] = False
-            match["props"] = []
+            d = dict()
+            d["values"] = match
+            d["found"] = False
+            d["props"] = []
+            search.append(d)
+        self.search = search
 
     def found(self):
-        for match in self.matches:
+        for match in self.search:
             if not match["found"]:
                 return False
         return True
@@ -86,8 +92,8 @@ class PropFind:
     def find(self, props):
         if "model" not in props.keys() or props["model"] != "string":
             return
-        props = self.sub_props(props)
-        for match in self.matches:
+        props = PropFind.sub_props(props)
+        for match in self.search:
             if self.match_prop(props, match["values"]):
                 match["found"] = True
                 if not self.prop_matched(props, match["props"]):
