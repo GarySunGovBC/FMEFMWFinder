@@ -11,30 +11,22 @@
     ]
   },
   "match": [
-    {
-      "found": false,
-      "values": [
-        {
-          "name": "DEST_SCHEMA",
-          "criteria": "equal"
-        }
-      ],
-      "props": []
-    },
-    {
-      "found": false,
-      "values": [
-        {
-          "name": "DEST_DB_ENV_KEY",
-          "criteria": "equal"
-        },
-        {
-          "defaultValue": "DLV",
-          "criteria": "equal"
-        }
-      ],
-      "props": []
-    }
+    [
+      {
+        "name": "DEST_SCHEMA",
+        "criteria": "equal"
+      }
+    ],
+    [
+      {
+        "name": "DEST_DB_ENV_KEY",
+        "criteria": "equal"
+      },
+      {
+        "defaultValue": "DLV",
+        "criteria": "equal"
+      }
+    ]
   ]
 }
 

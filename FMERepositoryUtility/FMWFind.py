@@ -16,6 +16,6 @@ class FMWFind:
     def find(self):
         for parameter in self.parameters:
             self.prop_find.find(parameter)
-            for match in self.prop_find.matches:
-                if len(match["props"])>0:
+            for match in self.prop_find.search:
+                if len(match["props"]) > 0:
                     self.match.append(match["props"])
