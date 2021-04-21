@@ -20,6 +20,6 @@ class FMERepositoryFind(FMEServerJob):
             if self.prop_find.found():
                 line = "%s/%s" % (repo_name, fmw_name)
                 self.fmw_found_list.append(line)
-                # self.log.write_line(line)
+                self.log.write_line(line)
         except APIException as e:
             raise APIException("Error: %s. reason: %s" % (full_name, e.error["message"]))
